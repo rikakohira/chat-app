@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'messages/index'
-  # フロント実装のため仮のルーティング
-  root to: "messages#index"
+  root to: "rooms#index"
   resources :users, only: [:edit, :update]
-  resources :rooms, only: [:new, :create]
+  resources :rooms, only: [:new, :create] do
+    resources :messages, only: [:index, :create]
+  end
 
 end
