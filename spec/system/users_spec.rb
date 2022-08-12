@@ -13,7 +13,7 @@ RSpec.describe 'ユーザーログイン機能', type: :system do
     @user = FactoryBot.create(:user)
 
     # サインインページへ移動する
-    visit  new_user_session_path
+    visit new_user_session_path
 
     # ログインしていない場合、サインインページに遷移していることを確認する
     expect(current_path).to eq(new_user_session_path)

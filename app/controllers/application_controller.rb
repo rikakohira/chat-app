@@ -5,9 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
+
   # メソッド名は慣習
-  def configure_permitted_parameters  
-     #parmit（:deviseの処理名, keys: [:許可するキー]
+  def configure_permitted_parameters
+    # parmit（:deviseの処理名, keys: [:許可するキー]
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end
